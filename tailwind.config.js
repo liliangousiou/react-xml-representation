@@ -14,12 +14,4 @@ module.exports = {
             version: 'detect',
         },
     },
-    overrides: [
-        {
-            files: ['**/types/**/*', '**/components/**/*'],
-            rules: {
-                '@typescript-eslint/no-explicit-any': 'off',
-            },
-        },
-    ],
 };
