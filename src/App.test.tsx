@@ -5,6 +5,11 @@ import App from './App';
 
 test('renders title', () => {
     render(<App />);
-    const titleElement = screen.getByText(/XML Uploader/i);
-    expect(titleElement).toBeInTheDocument();
+
+    const headingElement = screen.getByRole('heading', { level: 1 });
+    expect(headingElement).toBeInTheDocument();
+    expect(headingElement).toHaveTextContent('XML Uploader');
+
+    // Check if the H1 renders the title
+    expect(headingElement).toBeInTheDocument();
 });

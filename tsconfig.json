@@ -19,7 +19,13 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
-        "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"],
+        "types": [
+            "vite/client",
+            "vitest/globals",
+            "@testing-library/jest-dom",
+            "jest",
+            "node"
+        ],
         /* Imports alias */
         "baseUrl": "src",
         "paths": {
