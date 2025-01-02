@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import TreeDiagram from 'components/TreeDiagram';
+import XACMLDiagram from 'components/XACMLDiagram';
 
 const UploadForm: React.FC = () => {
     const [xmlContent, setXmlContent] = useState<string | null>(null);
@@ -35,7 +35,8 @@ const UploadForm: React.FC = () => {
                 aria-label='upload file'
             />
             {errorMessage && <div>{errorMessage}</div>}
-            {xmlContent && <TreeDiagram xml={xmlContent} />}
+            {/* {xmlContent && <TreeDiagram xml={xmlContent} />} */}
+            {xmlContent && <XACMLDiagram xacmlString={xmlContent} />}
         </div>
     );
 };

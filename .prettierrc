@@ -21,6 +21,7 @@
         "assets/(.*)$",
         "components/(.*)$",
         "types",
+        "utils",
         "^[/]",
         "^[./]"
     ],

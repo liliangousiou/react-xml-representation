@@ -30,7 +30,8 @@
         "baseUrl": "src",
         "paths": {
             "components/*": ["components/*"],
-            "types/*": ["types/*"]
+            "types/*": ["types/*"],
+            "utils/*": ["utils/*"]
         }
     },
     "include": ["src"]

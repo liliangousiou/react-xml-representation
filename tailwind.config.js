@@ -1,17 +1,7 @@
 module.exports = {
-    parser: '@typescript-eslint/parser',
-    extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
-    ],
-    rules: {
-        'react/react-in-jsx-scope': 'off',
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    theme: {
+        extend: {},
     },
-    settings: {
-        react: {
-            version: 'detect',
-        },
-    },
+    plugins: [],
 };
