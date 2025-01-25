@@ -46,8 +46,9 @@ To get started with the project, follow these steps:
 
 The project structure is organized as follows:
 
-├── src/
-│   ├── components/
+```
+├── src
+│   ├── components
 │   │   ├── Title
 │   │   │   ├── index.tsx
 │   │   │   └── Title.test.tsx
@@ -84,6 +85,7 @@ The project structure is organized as follows:
 ├── tailwind.config.js
 ├── tsconfig.json
 └── vite.config.json
+```
 
 
 ### Key Components
