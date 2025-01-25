@@ -8,7 +8,7 @@ describe('App', () => {
         render(<App />);
 
         // Check if the Title component is rendered
-        expect(screen.getByText('XML Uploader and viewer')).toBeInTheDocument();
+        expect(screen.getByText('XML Representation')).toBeInTheDocument();
     });
 
     it('should render UploadForm component', () => {
@@ -22,7 +22,7 @@ describe('App', () => {
         render(<App />);
 
         // Ensure both components are rendered
-        expect(screen.getByText('XML Uploader and viewer')).toBeInTheDocument();
+        expect(screen.getByText('XML Representation')).toBeInTheDocument();
         expect(screen.getByTestId('upload-form')).toBeInTheDocument();
     });
 });

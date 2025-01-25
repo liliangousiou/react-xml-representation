@@ -16,7 +16,7 @@ describe('Title Component', () => {
 
         // Check if the text content inside the h1 is correct
         const titleElement = screen.getByRole('heading', { level: 1 });
-        expect(titleElement).toHaveTextContent('XML Uploader and viewer');
+        expect(titleElement).toHaveTextContent('XML Representation');
     });
 
     it('has the correct class names', () => {
