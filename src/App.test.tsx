@@ -1,15 +1,28 @@
 import { render, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { expect } from 'vitest';
 
 import App from './App';
 
-test('renders title', () => {
-    render(<App />);
+describe('App', () => {
+    it('should render Title component', () => {
+        render(<App />);
 
-    const headingElement = screen.getByRole('heading', { level: 1 });
-    expect(headingElement).toBeInTheDocument();
-    expect(headingElement).toHaveTextContent('XML Uploader');
+        // Check if the Title component is rendered
+        expect(screen.getByText('XML Uploader and viewer')).toBeInTheDocument();
+    });
 
-    // Check if the H1 renders the title
-    expect(headingElement).toBeInTheDocument();
+    it('should render UploadForm component', () => {
+        render(<App />);
+
+        // Ensure the UploadForm component is rendered
+        expect(screen.getByTestId('upload-form')).toBeInTheDocument();
+    });
+
+    it('should render both Title and UploadForm components together', () => {
+        render(<App />);
+
+        // Ensure both components are rendered
+        expect(screen.getByText('XML Uploader and viewer')).toBeInTheDocument();
+        expect(screen.getByTestId('upload-form')).toBeInTheDocument();
+    });
 });
