@@ -1,58 +1,168 @@
-# React + TypeScript + Vite
+# React XML Representation
 
-This template provides a minimal setup to get React working in Vite with HMR and
-some ESLint rules.
+This is a React-based project that allows you to parse and display XML data in a
+structured and visual format. The core functionality includes converting XML
+strings into a tree structure and rendering them with expandable/collapsible
+nodes. It also provides testing utilities and a fully integrated development
+environment with Vite and TypeScript.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
-  uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc)
-  uses [SWC](https://swc.rs/) for Fast Refresh
+- **XML Parsing and Tree Representation**: Converts XML strings into a tree
+  structure that is displayed in a React UI.
+- **Expandable/Collapsible Nodes**: Visualize the nested structure of XML data
+  with the ability to expand or collapse child nodes.
+- **TypeScript and React**: Built with TypeScript and React for a strongly
+  typed, modern web application.
+- **Test Suite**: Includes unit tests using Vitest and React Testing Library to
+  ensure the correct behavior of components and utility functions.
+- **TailwindCSS**: Uses TailwindCSS for styling the UI components.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the
-configuration to enable type aware lint rules:
+To get started with the project, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the repository**:
 
-```js
-export default tseslint.config({
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ['./tsconfig.node.json', './tsconfig.app.json'],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-});
+    ```bash
+    git clone https://github.com/liliangousiou/react-xml-representation.git
+    cd react-xml-representation
+    ```
+
+2. **Install dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+    The application should now be running at
+    [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+
+The project structure is organized as follows:
+
+```
+/src
+  /components
+    - Title.tsx          // Component that displays the main title
+    - UploadForm.tsx     // Form for uploading and displaying XML
+    - XMLNode.tsx        // Component for rendering each XML node
+    - XMLDiagram.tsx     // Main component to handle XML data visualization
+  /utils                 // Utilities to convert XML to tree structure and format node attributes
+  App.tsx                // Main application component
+  index.tsx              // Entry point for the application
+/package.json            // Project metadata and scripts
+/vite.config.ts          // Vite configuration file
+/tailwind.config.js      // TailwindCSS configuration file
 ```
 
-- Replace `tseslint.configs.recommended` to
-  `tseslint.configs.recommendedTypeChecked` or
-  `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install
-  [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and
-  update the config:
+### Key Components
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+1. **`App.tsx`**:
 
-export default tseslint.config({
-    // Set the react version
-    settings: { react: { version: '18.3' } },
-    plugins: {
-        // Add the react plugin
-        react,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended rules
-        ...react.configs.recommended.rules,
-        ...react.configs['jsx-runtime'].rules,
-    },
-});
+    - The main component that renders the `Title` and `UploadForm` components,
+      structuring the app.
+
+2. **`components/Title.tsx`**:
+
+    - Displays the title at the top of the app.
+
+3. **`components/UploadForm/index.tsx`**:
+
+    - Manages the file upload and conditional rendering of `FileInput` or
+      `XMLDiagram` based on XML content.
+
+4. **`components/UploadForm/FileInput.tsx`**:
+
+    - Handles file selection, validation, and error messaging, passing valid XML
+      content to the parent.
+
+5. **`components/XMLDiagram/index.tsx`**:
+
+    - Parses and displays the uploaded XML content, rendering it through
+      `XMLNode`.
+
+6. **`components/XMLDiagram/XMLNode.tsx`**:
+    - Recursively renders XML nodes, their tags, values, attributes, and
+      children with expand/collapse functionality.
+
+### Testing
+
+The project uses **Vitest** for testing and **React Testing Library** for
+testing React components. The tests are designed to ensure that the components
+and utilities work as expected.
+
+To run the tests:
+
+```bash
+npm test
 ```
+
+To clear the test cache and rerun:
+
+```bash
+npm run test:clear-and-run
+```
+
+### Available Scripts
+
+- `npm run dev`: Start the development server with hot module replacement.
+- `npm run build`: Build the production-ready application using TypeScript and
+  Vite.
+- `npm run preview`: Preview the production build locally.
+- `npm run lint`: Run ESLint to check for any code style issues.
+- `npm run lint:fix`: Automatically fix any linting issues.
+- `npm run format`: Format the code using Prettier.
+- `npm test`: Run the tests using Vitest.
+
+### Linting and Formatting
+
+This project uses **ESLint** for linting and **Prettier** for code formatting.
+The following rules are in place:
+
+- ESLint checks for potential issues in the JavaScript/TypeScript code.
+- Prettier ensures consistent code style, including spaces, line lengths, etc.
+
+To fix issues automatically, you can run:
+
+```bash
+npm run lint:fix
+```
+
+To format the code, you can run:
+
+```bash
+npm run format
+```
+
+### TailwindCSS
+
+The project is styled using **TailwindCSS**, a utility-first CSS framework that
+allows for rapid UI development. Tailwind is configured in `tailwind.config.js`,
+and you can customize the design system as needed.
+
+### Dependencies
+
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript.
+- **TailwindCSS**: A utility-first CSS framework.
+- **Vite**: A fast build tool and development server for modern web projects.
+- **Vitest**: A testing framework for unit and integration tests.
+
+### Development Setup
+
+1. **Vite**: The development server is powered by Vite, which provides fast and
+   efficient builds with hot-reloading support.
+2. **TypeScript**: This project is written in TypeScript, and it includes type
+   definitions for React and other dependencies.
+3. **ESLint and Prettier**: Ensure your code adheres to a consistent style.
+
+## License
+
+Created by _Lilian Gousiou_ for [Axiomatics](https://axiomatics.com) interview
+process.
