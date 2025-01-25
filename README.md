@@ -46,20 +46,45 @@ To get started with the project, follow these steps:
 
 The project structure is organized as follows:
 
-```
-/src
-  /components
-    - Title.tsx          // Component that displays the main title
-    - UploadForm.tsx     // Form for uploading and displaying XML
-    - XMLNode.tsx        // Component for rendering each XML node
-    - XMLDiagram.tsx     // Main component to handle XML data visualization
-  /utils                 // Utilities to convert XML to tree structure and format node attributes
-  App.tsx                // Main application component
-  index.tsx              // Entry point for the application
-/package.json            // Project metadata and scripts
-/vite.config.ts          // Vite configuration file
-/tailwind.config.js      // TailwindCSS configuration file
-```
+├── src/
+│   ├── components/
+│   │   ├── Title
+│   │   │   ├── index.tsx
+│   │   │   └── Title.test.tsx
+│   │   ├── UploadForm
+│   │   │   ├── FileInput.test.tsx
+│   │   │   ├── FileInput.tsx
+│   │   │   ├── index.tsx
+│   │   │   └── UploadForm.test.tsx
+│   │   ├── XMLDiagram
+│   │   │   ├── index.tsx
+│   │   │   ├── XMLDiagram.test.tsx
+│   │   │   ├── XMLNode.test.tsx
+│   │   │   └── XMLNode.tsx
+│   ├── utils
+│   │   ├── formatNodeAttrValue.test.tsx
+│   │   ├── index.tsx
+│   │   ├── parseXML.test.tsx
+│   │   └── xmlToTree.test.tsx
+│   ├── App.test.tsx
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   ├── setupTests.tsx
+│   ├── types.ts
+│   └── vite-env.d.ts
+├── .gitignore
+├── .prettierrc
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── tsconfig.json
+└── vite.config.json
+
 
 ### Key Components
 
